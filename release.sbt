@@ -22,7 +22,7 @@ publishTo := {
   if (version.value.trim.endsWith("SNAPSHOT"))
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
-    Some("releases" at nexus + "service/local/staging/deploy/maven2")
+    Some(Resolver.file("file",  new File( "/home/ec2-user/m2" )))
 }
 
 publishArtifact in Test := false
